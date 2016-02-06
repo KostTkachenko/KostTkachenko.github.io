@@ -1,0 +1,187 @@
+html, body{
+	/*background: #020202;*/
+	height: 100%;
+}
+
+.tmp{
+	border: 1px solid red;
+	color: #FFFFFF;
+}
+
+.wrapper_2{
+	height: 100%;
+	background: #020202 url('../img/fon_slide2.jpg') no-repeat center center;
+	background-size: auto 100%;
+	border: 1px solid yellow;
+}
+
+.hider{
+	position: relative;
+}
+
+.cell2_1{
+	position: absolute;
+	left: 0;
+}
+
+.logo1{
+	width: 75%;
+	position: relative;
+	left: -13%;
+}
+
+.text_2{
+	position: absolute;
+	top: 20%;
+	left: 23%;
+	/*border: 1px solid green;*/
+}
+
+.text_2 .string1_2{
+	color: #FFFFFF;
+	/*font-size: 22px;*/
+	font-size: 1.45vw;
+}
+
+.text_2 .string2_2{
+	color: #867F79;
+	/*font-size: 14px;*/
+	font-size: 0.7vw;
+	letter-spacing: 0.15vw;
+	font-weight: 100;
+}
+
+.cell2_2{
+	position: absolute;
+	right: -5%;
+	margin-top: 6%;
+	/*border: 1px solid green;*/
+}
+
+.str2 {
+	display: table;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.str2 ul {
+	display: table-row;
+}
+		
+.str2 ul li {
+	display: table-cell;
+	border-left: 2px solid #908C89;
+	vertical-align: middle;
+}
+		
+.str2 ul li:first-child {
+	border-left: none;
+}
+		
+.str2 ul li a {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.833vw;
+	font-weight: 100;
+	letter-spacing: 0.2vw;
+	color: #FFFEFB;
+}
+
+.str2 ul li a:hover {
+	color: #8B2927;
+}
+
+.miniature{
+	position: relative;
+	top: 14%;
+}
+
+.line_1{
+	margin-bottom: 1%;
+}
+
+.miniature_1{
+	border: 1px solid yellow;
+}
+
+/*.miniature_1 */.books1{
+	width: 54%;
+	float: right;
+	box-shadow: 4px 3px 11px 0px #000000;
+	position: relative;
+}
+
+/*.books1:hover:before {
+	content: " ";
+	top: 0;
+	right: 1%;
+	position: absolute;
+	width: 54%;
+	height: 100%;
+	text-align: center;
+	display: inline-block;
+	background: #8B2926;
+}
+
+.books1:hover:after {
+    content: " книга ";
+    white-space: pre;
+    font-size: 18px;
+	font-size: 0.938vw;
+	font-weight: 100;
+	letter-spacing: 0.2vw;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 43%;
+    left: 40%;
+}*/
+
+.miniature_2 .emblem{
+	width: 75%;
+	float: left;
+	box-shadow: 4px 3px 11px 0px #000000;
+}
+
+.line_2{
+	margin-bottom: 1%;
+}
+
+.miniature_3 .sign{
+	width: 35%;
+	float: right;
+	margin-right: 2%;
+	box-shadow: 4px 3px 11px 0px #000000;
+}
+
+.miniature_3 .circus{
+	width: 17%;
+	float: right;
+	box-shadow: 4px 3px 11px 0px #000000;
+}
+
+.miniature_4 .books2{
+	width: 110%;
+	float: left;
+	box-shadow: 4px 3px 11px 0px #000000;
+}
+
+.miniature_5 .map{
+	width: 35%;
+	float: right;
+	box-shadow: 4px 3px 11px 0px #000000;
+}
+
+.miniature_5 .plan{
+	width: 37%;
+	float: right;
+	margin-right: 2%;
+	box-shadow: 4px 3px 11px 0px #000000;
+}
+
+.miniature_6 .notebook{
+	width: 73%;
+	float: left;
+	box-shadow: 4px 3px 11px 0px #000000;
+}

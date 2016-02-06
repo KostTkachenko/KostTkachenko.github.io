@@ -1,0 +1,100 @@
+html, body{
+	/*background: #020202;*/
+	height: 100%;
+}
+
+/*.tmp{
+	border: 1px solid red;
+	color: #FFFFFF;
+}*/
+
+.container{
+	/*border: 1px solid green;*/
+}
+
+.wrapper{
+	height: 100%;
+	background: #020202 url('../img/fon_slide1.jpg') no-repeat center center;
+	background-size: auto 100%;
+	border: 1px solid yellow;
+	position: relative;
+}
+
+.cell1{
+	position: absolute;
+	top: 42%;
+	right: 16%;
+}
+
+.text .string1 {
+	color: #FFFFFF;
+	/*font-size: 26px;*/
+	font-size: 1.5vw;
+}
+
+.text .string2 {
+	color: #A79F94;
+	/*font-size: 14px;*/
+	font-size: 0.8vw;
+	letter-spacing: 0.1vw;
+	font-weight: 100;
+}
+
+.cell2{
+	position: absolute;
+	top: 75%;
+	right: 0;
+}
+
+.str1 {
+	display: table;
+	width: 23%;
+	height: 3%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.str1 ul {
+	display: table-row;
+}
+  
+.str1 ul li {
+	display: table-cell;
+	width: 33%;
+	border-left: 2px solid #908C89;
+	vertical-align: middle;
+}
+  
+.str1 ul li:first-child {
+	border-left: none;
+}
+  
+.str1 ul li a {
+	text-decoration: none;
+	letter-spacing: 0.2vw;
+	font-weight: 100;
+	font-size: 17px;
+	font-size: 0.885vw;
+	color: #FFFEFB;
+}
+
+.str1 ul li a:hover {
+	color: #8B2927;
+}
+
+.cell3{
+	position: absolute;
+	top: 92%;
+	right: 0;
+}
+
+.dart {
+	/*border: 1px solid #76339A;*/
+	margin: 0 auto;
+	width: 4%;
+}
+
+.dart a img {
+	width: 100%;
+	height: auto;
+}
