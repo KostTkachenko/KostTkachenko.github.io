@@ -1,6 +1,6 @@
 var picture = {
 
-      height: 160,
+      height: 500,
       width: 0,
       duration: 9000
 
@@ -10,7 +10,7 @@ var picture = {
 
 var feather = {
 
-    width: 10,
+    width: 30,
     thickness: 1,      // min = 0.1
     angle: 33           // degree
 
