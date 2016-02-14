@@ -20,6 +20,14 @@ html, body{
 	position: relative;
 }
 
+.charK{
+
+	border: 1px solid violet;
+	position: absolute;
+	top: 10%;
+	left: 25%;
+}
+
 .cell1_1{
 	position: absolute;
 	top: 42%;
