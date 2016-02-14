@@ -22,7 +22,7 @@ html, body{
 
 .charK{
 
-	/*border: 1px solid violet;*/
+	border: 1px solid violet;
 	position: absolute;
    	top: 50%; 
     left: 50%; 
@@ -30,7 +30,7 @@ html, body{
 }
 
 svg{
-	/*border: 1px solid blue;*/
+	border: 1px solid blue;
 }
 
 .cell1_1{

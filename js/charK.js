@@ -1,3 +1,44 @@
+
+data1 = [
+    {"x":"200","y":"100"},
+    {"x":"400","y": "60"},
+    {"x":"580","y":"150"},
+    {"x":"590","y":"325"},
+    {"x":"550","y":"450"},
+    {"x":"550","y":"450"},
+    {"x":"550","y":"450"},
+    {"x":"575","y":"435"},
+    {"x":"575","y":"435"},
+    {"x":"575","y":"435"},
+    {"x":"590","y":"400"},
+    {"x":"620","y":"350"},
+    {"x":"680","y":"290"},
+    {"x":"718","y":"240"},
+    {"x":"708","y":"200"},
+    {"x":"708","y":"180"},
+    {"x":"710","y":"170"},
+    {"x":"715","y":"165"},
+    {"x":"715","y":"165"},
+    {"x":"715","y":"165"},
+    {"x":"715","y":"165"},
+    {"x":"710","y":"170"},
+    {"x":"708","y":"180"},
+    {"x":"713","y":"200"},
+    {"x":"720","y":"220"},
+    {"x":"740","y":"270"},
+    {"x":"715","y":"320"},
+    {"x":"620","y":"320"},
+    {"x":"520","y":"380"},
+    {"x":"520","y":"380"},
+    {"x":"520","y":"380"},
+    {"x":"640","y":"310"},
+    {"x":"720","y":"400"},
+    {"x":"800","y":"500"},
+    {"x":"850","y":"560"},
+    {"x":"940","y":"580"},
+    {"x":"1040","y":"545"}
+]
+
 var picture = {
 
       height: 500,
@@ -18,19 +59,22 @@ var feather = {
 
 
 
-d3.json ( "./data/coordinates1.json", function ( error, json ) {
+// d3.json ( "./data/coordinates1.json", function ( error, json ) {
 
-  if ( error ) return console.warn ( error );  
-  var data = scaleData ( json );
+//   if ( error ) return console.warn ( error );  
+  // var data = scaleData ( json );
+  var data = scaleData ( data1 );
+
   var KContainer = createSvg ();
   createLines ( KContainer, data );
   animate ( KContainer );
   // showDots ( KContainer, data );
 
-});
+// });
 
 
 
+// function scaleData ( json ) {
 function scaleData ( json ) {
 
   var data = json;
