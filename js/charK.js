@@ -1,83 +1,106 @@
+dataK = [
+    {x:200,y:100},
+    {x:400,y: 60},
+    {x:580,y:150},
+    {x:590,y:325},
+    {x:550,y:450},
+    {x:550,y:450},
+    {x:550,y:450},
+    {x:575,y:435},
+    {x:575,y:435},
+    {x:575,y:435},
+    {x:590,y:400},
+    {x:620,y:350},
+    {x:680,y:290},
+    {x:718,y:240},
+    {x:708,y:200},
+    {x:708,y:180},
+    {x:710,y:170},
+    {x:715,y:165},
+    {x:715,y:165},
+    {x:715,y:165},
+    {x:715,y:165},
+    {x:710,y:170},
+    {x:708,y:180},
+    {x:713,y:200},
+    {x:720,y:220},
+    {x:740,y:270},
+    {x:715,y:320},
+    {x:620,y:320},
+    {x:520,y:380},
+    {x:520,y:380},
+    {x:520,y:380},
+    {x:640,y:310},
+    {x:720,y:400},
+    {x:800,y:500},
+    {x:850,y:560},
+    {x:940,y:580},
+    {x:1040,y:545}
+  ];
 
-data1 = [
-    {"x":"200","y":"100"},
-    {"x":"400","y": "60"},
-    {"x":"580","y":"150"},
-    {"x":"590","y":"325"},
-    {"x":"550","y":"450"},
-    {"x":"550","y":"450"},
-    {"x":"550","y":"450"},
-    {"x":"575","y":"435"},
-    {"x":"575","y":"435"},
-    {"x":"575","y":"435"},
-    {"x":"590","y":"400"},
-    {"x":"620","y":"350"},
-    {"x":"680","y":"290"},
-    {"x":"718","y":"240"},
-    {"x":"708","y":"200"},
-    {"x":"708","y":"180"},
-    {"x":"710","y":"170"},
-    {"x":"715","y":"165"},
-    {"x":"715","y":"165"},
-    {"x":"715","y":"165"},
-    {"x":"715","y":"165"},
-    {"x":"710","y":"170"},
-    {"x":"708","y":"180"},
-    {"x":"713","y":"200"},
-    {"x":"720","y":"220"},
-    {"x":"740","y":"270"},
-    {"x":"715","y":"320"},
-    {"x":"620","y":"320"},
-    {"x":"520","y":"380"},
-    {"x":"520","y":"380"},
-    {"x":"520","y":"380"},
-    {"x":"640","y":"310"},
-    {"x":"720","y":"400"},
-    {"x":"800","y":"500"},
-    {"x":"850","y":"560"},
-    {"x":"940","y":"580"},
-    {"x":"1040","y":"545"}
-]
+var dataT1 = [
+    {x:345.75,y:49},
+    {x:289.75,y:94},
+    {x:295.75,y:255},
+    {x:301.75,y:422},
+    {x:242.75,y:459}
+  ];
+
+
+var dataT2 = [
+    {x:174.75,y:424},
+    {x:273.75,y:376},
+    {x:406.75,y:409}
+  ];
+//==========================================
+
 
 var picture = {
-
       height: 500,
       width: 0,
-      duration: 9000
-
+      durationK: 5000,
+	  durationT: 7000
   };  
 
-
-
 var feather = {
-
     width: 30,
-    thickness: 1,      // min = 0.1
-    angle: 33           // degree
-
+    thickness: 2,      
+    angle: 33,           // degree
+    color: '#8F2F34',
+    opacity: 1
   };
 
 
+//--------------------------------------------
 
-// d3.json ( "./data/coordinates1.json", function ( error, json ) {
+  function proceedK() {
+    createLines ( KContainer, dataK );
+    animateK ( KContainer );
+  };
 
-//   if ( error ) return console.warn ( error );  
-  // var data = scaleData ( json );
-  var data = scaleData ( data1 );
+  function proceedT() {
+    feather.color = '#FFFFFF';
+    feather.opacity = 0;
+    createLines ( KContainer, dataT1 );
+    createLines ( KContainer, dataT2 );
+    animateT ( KContainer );
+  };
 
+  var dataK = scaleDataK ( dataK );
   var KContainer = createSvg ();
-  createLines ( KContainer, data );
-  animate ( KContainer );
-  // showDots ( KContainer, data );
+  setTimeout(proceedK,0);
 
-// });
+  var dataT1 = scaleDataT ( dataT1, 0.7, 1.1, 0.2 );
+  var dataT2 = scaleDataT ( dataT2, 0.5, 0.87, 0.87 );
+  setTimeout(proceedT,picture.durationK+100);
+
+
+//--------------------------------------------
 
 
 
-// function scaleData ( json ) {
-function scaleData ( json ) {
+function scaleDataK ( data ) {
 
-  var data = json;
   var maxX=0, minX=100000, maxY=0, minY=100000;
   data.forEach(function(d) {
     if(+d.x > maxX) maxX = +d.x;
@@ -105,6 +128,38 @@ function scaleData ( json ) {
 }
 
 
+function scaleDataT ( data, scale, xScale, yScale ) {
+
+  var maxX=0, minX=100000, maxY=0, minY=100000;
+  data.forEach(function(d) {
+    if(+d.x > maxX) maxX = +d.x;
+    if(+d.x < minX) minX = +d.x;
+    if(+d.y > maxY) maxY = +d.y;
+    if(+d.y < minY) minY = +d.y;
+  });
+
+  var comingPicture = {
+      height: maxY - minY,
+      width: maxX - minX
+  }
+
+  var pictureProportion = comingPicture.width / comingPicture.height ;
+  picture.width = picture.height * pictureProportion;
+
+  // var scale = picture.height / comingPicture.height;
+  // var scale = 0.7;
+  // var xScale = 1.1;
+  // var yScale = 0.2;
+
+  data.forEach(function(d) {
+    d.x = (+d.x - minX) * scale + xScale * maxX + feather.width;
+    d.y = (+d.y - minY) * scale + yScale * maxY + feather.width;   
+  });  
+
+  return data;
+}
+
+
 
 function createSvg () {
 
@@ -112,9 +167,7 @@ function createSvg () {
           .append('svg')
           .attr('height', +picture.height + 2 * feather.width)
           .attr('width', +picture.width + 2 * feather.width)
-          // .attr('class', 'pictureSvg')
-          // .style('background', '#212121')
-          .style('opacity', 1)
+          .style('opacity', 1);
           // .style('border', '1px solid red');
 
   return KContainer;
@@ -150,7 +203,8 @@ function createLines ( KContainer, data ) {
             .append('path')
             .attr("d", trace(tempData))   // binding data to lines
             .attr('fill', 'none')
-            .style("stroke", "#8F2F34")
+            .style("stroke", feather.color)
+            .style("opacity", feather.opacity)
             .style("stroke-linecap", "round")
             .style("stroke-width", +feather.thickness);
   }
@@ -158,7 +212,7 @@ function createLines ( KContainer, data ) {
 
 
 
-function animate ( KContainer ) {
+function animateK ( KContainer ) {
 
   var totalLength = KContainer
             .select('g')
@@ -166,46 +220,29 @@ function animate ( KContainer ) {
             .node()
             .getTotalLength();
 
-  // (function repeat() {
-
     KContainer
         .selectAll('path')
         .attr("stroke-dasharray", totalLength + " " + totalLength)
         .attr("stroke-dashoffset", totalLength)
         .transition()
-            .duration(+picture.duration)
+            .duration(+picture.durationK)
             .ease("linear")
             .attr("stroke-dashoffset", 0)
-        // .transition()
-        //     .duration(2000)
-        //     .style("stroke", "#8F2F34")
-        // .transition()
-        //     .duration(+picture.duration/2)
-        //     .style("stroke", "black")
-        // .transition()
-        //     .duration(1200)
-        //     .style("stroke", "#212121")
-        // .transition()
-        //     .duration(2000)
-        // .transition()
-        //     .duration(0)
-        //     .style("stroke", "#8F2F34")
-        //         .each("end", repeat);
-  // })();
-
 };
 
 
 
-function showDots ( KContainer , data ) {
+function animateT ( KContainer ) {
 
-  KContainer.selectAll('circle')
-      .data(data)
-      .enter()
-      .append('circle') 
-            .attr('cx', function(d){return d.x})
-            .attr('cy', function(d){return d.y})
-            .attr('r', 2)
-            .style('fill', 'red');
+  var totalLength = KContainer
+            .select('g')
+            .selectAll('path')
+            .node()
+            .getTotalLength();
 
-}
+    KContainer
+        .selectAll('path')
+        .transition()
+            .duration(+picture.durationT)
+            .style("opacity", 1);
+};
