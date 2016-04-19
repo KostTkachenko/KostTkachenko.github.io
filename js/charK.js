@@ -93,7 +93,7 @@ var picture = {
 
 var feather = {
     width: 27,
-    thickness: 1,      
+    thickness: 3,      
     angle: 33,           // degree
     color: '#8F2F34',
     opacity: 1
@@ -105,14 +105,14 @@ var feather = {
 
   var dataK = scaleDataK ( dataK );
   var KContainer = createSvg ();
-  setTimeout( proceedK, 0);
+  setTimeout( proceedK, 50);
 
   var dataT1 = scaleDataT ( dataT1, 0.7, 0.75, 0.17 );
   var dataT2 = scaleDataT ( dataT2, 0.53, 0.68, 0.73 );
   var dataT3 = scaleDataT ( dataT3, 0.95, 1.02, 0.17 );
   var dataT4 = scaleDataT ( dataT4, 0.6, 0.55, 0.14 );
   var dataT5 = scaleDataT ( dataT5, 0.6, 0.51, 0.222 );
-  setTimeout( proceedT, picture.durationK+30);
+  setTimeout( proceedT, picture.durationK + 100);
 
 
 //--------------------------------------------
@@ -209,7 +209,7 @@ function createSvg () {
 
 function createLines ( KContainer, data ) {
 
-  var traceQuantity = (Math.round( +feather.width / +feather.thickness) + 1) * 5;
+  var traceQuantity = (Math.round( +feather.width / +feather.thickness) + 1) * 2;
 
   var xOffset = +feather.width * Math.cos ( +feather.angle * Math.PI /180 );
   var yOffset = +feather.width * Math.sin ( +feather.angle * Math.PI /-180 );
