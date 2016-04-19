@@ -52,23 +52,67 @@ var dataT2 = [
     {x:273.75,y:376},
     {x:406.75,y:409}
   ];
+
+
+var dataT3 = [
+    {x:715,y:165},
+    {x:710,y:170},
+    {x:708,y:180},
+    {x:713,y:200},
+    {x:720,y:220},
+    {x:745,y:290},
+    {x:700,y:320}
+  ];
+
+
+var dataT4 = [
+    {x:490,y:63},
+    {x:320,y:153},
+    {x:172.75,y:176},
+    {x:107.75,y:91},
+    {x:80.75,y:110}
+]
+
+
+var dataT5 = [
+    {x:264.75,y:65},
+    {x:300.75,y:75},
+    {x:284.75,y:336},
+    {x:339.75,y:366}
+]
+
 //==========================================
 
 
 var picture = {
-      height: 500,
-      width: 0,
-      durationK: 5000,
+    height: 500,
+    width: 0,
+    durationK: 7000,
 	  durationT: 7000
   };  
 
 var feather = {
-    width: 30,
-    thickness: 2,      
+    width: 27,
+    thickness: 1,      
     angle: 33,           // degree
     color: '#8F2F34',
     opacity: 1
   };
+
+
+//--------------------------------------------
+
+
+  var dataK = scaleDataK ( dataK );
+  var KContainer = createSvg ();
+  setTimeout( proceedK, 0);
+
+  var dataT1 = scaleDataT ( dataT1, 0.7, 0.75, 0.17 );
+  var dataT2 = scaleDataT ( dataT2, 0.53, 0.68, 0.73 );
+  var dataT3 = scaleDataT ( dataT3, 0.95, 1.02, 0.17 );
+  var dataT4 = scaleDataT ( dataT4, 0.6, 0.55, 0.14 );
+  var dataT5 = scaleDataT ( dataT5, 0.6, 0.51, 0.222 );
+  setTimeout( proceedT, picture.durationK+30);
 
 
 //--------------------------------------------
@@ -83,18 +127,11 @@ var feather = {
     feather.opacity = 0;
     createLines ( KContainer, dataT1 );
     createLines ( KContainer, dataT2 );
+    createLines ( KContainer, dataT3 );
+    createLines ( KContainer, dataT4 );
+    createLines ( KContainer, dataT5 );
     animateT ( KContainer );
   };
-
-  var dataK = scaleDataK ( dataK );
-  var KContainer = createSvg ();
-  setTimeout(proceedK,0);
-
-  var dataT1 = scaleDataT ( dataT1, 0.7, 1.1, 0.2 );
-  var dataT2 = scaleDataT ( dataT2, 0.5, 0.87, 0.87 );
-  setTimeout(proceedT,picture.durationK+100);
-
-
 //--------------------------------------------
 
 
@@ -146,14 +183,9 @@ function scaleDataT ( data, scale, xScale, yScale ) {
   var pictureProportion = comingPicture.width / comingPicture.height ;
   picture.width = picture.height * pictureProportion;
 
-  // var scale = picture.height / comingPicture.height;
-  // var scale = 0.7;
-  // var xScale = 1.1;
-  // var yScale = 0.2;
-
   data.forEach(function(d) {
-    d.x = (+d.x - minX) * scale + xScale * maxX + feather.width;
-    d.y = (+d.y - minY) * scale + yScale * maxY + feather.width;   
+    d.x = (+d.x - minX) * scale + xScale * picture.height + feather.width;
+    d.y = (+d.y - minY) * scale + yScale * picture.height + feather.width;   
   });  
 
   return data;
@@ -177,7 +209,7 @@ function createSvg () {
 
 function createLines ( KContainer, data ) {
 
-  var traceQuantity = (Math.round( +feather.width / +feather.thickness) + 1) * 2;
+  var traceQuantity = (Math.round( +feather.width / +feather.thickness) + 1) * 5;
 
   var xOffset = +feather.width * Math.cos ( +feather.angle * Math.PI /180 );
   var yOffset = +feather.width * Math.sin ( +feather.angle * Math.PI /-180 );
