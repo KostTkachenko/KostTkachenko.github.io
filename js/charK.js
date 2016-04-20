@@ -88,7 +88,7 @@ var picture = {
     height: 500,
     width: 0,
     durationK: 9000,
-	  durationT: 9000
+	  durationT: 16000
   };  
 
 var feather = {
@@ -105,14 +105,14 @@ var feather = {
 
   var dataK = scaleDataK ( dataK );
   var KContainer = createSvg ();
-  setTimeout( proceedK, 50);
+  setTimeout( proceedK, 1000);
 
   var dataT1 = scaleDataT ( dataT1, 0.7, 0.75, 0.17 );
   var dataT2 = scaleDataT ( dataT2, 0.53, 0.68, 0.73 );
   var dataT3 = scaleDataT ( dataT3, 0.95, 1.02, 0.17 );
   var dataT4 = scaleDataT ( dataT4, 0.6, 0.55, 0.14 );
   var dataT5 = scaleDataT ( dataT5, 0.6, 0.51, 0.222 );
-  setTimeout( proceedT, picture.durationK + 500);
+  setTimeout( proceedT, picture.durationK + 1300);
 
 
 //--------------------------------------------
