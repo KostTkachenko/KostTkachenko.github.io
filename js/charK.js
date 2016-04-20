@@ -87,8 +87,8 @@ var dataT5 = [
 var picture = {
     height: 500,
     width: 0,
-    durationK: 7000,
-	  durationT: 7000
+    durationK: 9000,
+	  durationT: 9000
   };  
 
 var feather = {
@@ -112,7 +112,7 @@ var feather = {
   var dataT3 = scaleDataT ( dataT3, 0.95, 1.02, 0.17 );
   var dataT4 = scaleDataT ( dataT4, 0.6, 0.55, 0.14 );
   var dataT5 = scaleDataT ( dataT5, 0.6, 0.51, 0.222 );
-  setTimeout( proceedT, picture.durationK + 100);
+  setTimeout( proceedT, picture.durationK + 500);
 
 
 //--------------------------------------------
