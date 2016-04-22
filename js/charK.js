@@ -88,7 +88,7 @@ var picture = {
     height: 500,
     width: 0,
     durationK: 9000,
-	  durationT: 16000
+	  durationT: 8000
   };  
 
 var feather = {
