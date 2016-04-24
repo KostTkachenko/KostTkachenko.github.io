@@ -87,7 +87,7 @@ var dataT5 = [
 var picture = {
     height: 500,
     width: 0,
-    durationK: 9000,
+    durationK: 6000,
 	  durationT: 8000
   };  
 
