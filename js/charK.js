@@ -112,6 +112,9 @@ var feather = {
   var dataT3 = scaleDataT ( dataT3, 0.95, 1.02, 0.17 );
   var dataT4 = scaleDataT ( dataT4, 0.6, 0.55, 0.14 );
   var dataT5 = scaleDataT ( dataT5, 0.6, 0.51, 0.222 );
+
+  var dataKUp =  dataK.slice(0,5);
+
   setTimeout( proceedT, picture.durationK + 1300);
 
 
@@ -130,6 +133,11 @@ var feather = {
     createLines ( KContainer, dataT3 );
     createLines ( KContainer, dataT4 );
     createLines ( KContainer, dataT5 );
+
+    feather.color = '#8F2F34';
+    feather.opacity = 1;
+    createLines ( KContainer, dataKUp );
+
     animateT ( KContainer );
   };
 //--------------------------------------------
