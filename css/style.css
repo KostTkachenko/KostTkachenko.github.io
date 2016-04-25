@@ -27,7 +27,7 @@ html, body{
    	top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    /*padding-right: 70px;*/
+    padding-right: 30px;
 }
 
 svg{
