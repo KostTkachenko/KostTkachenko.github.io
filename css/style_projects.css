@@ -4,7 +4,7 @@ html, body{
 }
 
 .tmp{
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	color: #FFFFFF;
 }
 
@@ -12,7 +12,7 @@ html, body{
 	height: 100%;
 	background: #020202 url('../img/fon_slide2.jpg') no-repeat center center;
 	background-size: auto 100%;
-	border: 1px solid yellow;
+	/*border: 1px solid yellow;*/
 }
 
 .hider{
@@ -71,12 +71,12 @@ html, body{
 		
 .str2 ul li {
 	display: table-cell;
-	border-left: 2px solid #908C89;
+	/*border-left: 2px solid #908C89;*/
 	vertical-align: middle;
 }
 		
 .str2 ul li:first-child {
-	border-left: none;
+	/*border-left: none;*/
 }
 		
 .str2 ul li a {
@@ -102,7 +102,7 @@ html, body{
 }
 
 .miniature_1{
-	border: 1px solid yellow;
+	/*border: 1px solid yellow;*/
 }
 
 /*.miniature_1 */.books1{
